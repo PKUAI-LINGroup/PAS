@@ -1,29 +1,13 @@
 ## Environment
-+ python==3.6.13
-+ torch==1.10.1
-+ transformers==4.18.0
-+ tensorboard==2.8.0
+Recommend python==3.6.13 and torch==1.10.1
 
 ## Data
-#### Tokenizer
-We use GPT2 vocabulary in our experiments. To prepare vocabulary files, please:
-+ download `gpt2-vocab.json` from [here](https://s3.amazonaws.com/models.huggingface.co/bert/gpt2-vocab.json), rename it to `vocab.json`, and move it to the folder `./gpt2_vocab/`
-+ download `gpt2-merges.txt` from [here](https://s3.amazonaws.com/models.huggingface.co/bert/gpt2-merges.txt), rename it to `merges.txt`, and move it to the folder `./gpt2_vocab/`
+Please unzip the files in the data directory to get the data.
 
-#### Datasets
-We have trained LGCM on three public available dalogue datasets:
-+ [PersonaChat](https://aclanthology.org/P18-1205/)
-+ [DalyDialog](https://aclanthology.org/I17-1099/)
-+ [MultiWOZ](https://aclanthology.org/D18-1547/)
+## Train
+cd pas_code/{dataset}/{pre-trained model}/{circumstance}/{paradigm}
+Run the corresponding python file
 
-After downloading raw data, please run scripts in `./prepare_data/` to preprocess data.
-
-### Training
-+ PersonaChat: `bash scripts/train_personachat.sh`
-+ DailyDialog: `bash scripts/train_dailydialog.sh`
-+ MultiWOZ: `bash scripts/train_multiwoz.sh`
-
-### Evaluation
-+ PersonaChat: `bash scripts/evaluate_personachat.sh`
-+ DailyDialog: `bash scripts/evaluate_dailydialog.sh`
-+ MultiWOZ: `bash scripts/evaluate_multiwoz.sh`
+Take IMDB dataset, BERT-base, DA0, PFSF for example.
+cd pas_code/imdb/base/DA0/PFSF
+python pre+fine+self+fine.py --data_dir data/imdb/DA0.txt --save_dir {SAVE_DIR}
