@@ -1,5 +1,9 @@
 ## Environment
 Recommend python==3.6.13 and torch==1.10.1
+```shell
+cd .
+pip install -r requirements.txt
+```
 
 ## Data
 Please unzip the files in the data directory to get the data.
